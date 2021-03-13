@@ -17,6 +17,11 @@ options = {
 app.use(express.json());
 app.use(cors('*'));
 
+// Ouvre le fichier HTML
+app.get('/', function (req, res) {
+  res.sendFile('/app.html');
+});
+
 // Renvoi le fichier listeCourses
 app.get('/listeCourses', (req, res, next) => {
  console.log('app.get')
